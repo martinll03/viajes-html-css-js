@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura de la ventana gráfica */
+    margin: 0; /* Eliminar márgenes predeterminados */
+    text-align: center;
+}
+
+h1 {
+    color: rgb(255, 0, 0);
+}
+
+input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: rgb(0, 185, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#mensaje {
+    color: gray;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.container0 {
+    flex-direction: column;
+    background-color: rgb(205, 205, 205);
+    width: 500px;
+    height: 300px;
+    display: flex; /* Añadido para centrar el contenido dentro del div */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
