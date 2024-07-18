@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Navegación con Javascript</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container0">
-        <h1 >Adivina el número</h1>
-        <p>Introduce un numero entre 1 y 100</p>
-        <div class="container">
-            <input type="number" id="numeroEntrada" onkeypress="verificarEnter(event)">
-            <button onclick="chequearResultado()">comprobar</button>
-        </div>
-        <p id="mensaje"></p>
+
+    <ul>
+        <li><a>Barcelona</a></li>
+        <li><a>Roma</a></li>
+        <li><a>París</a></li>
+        <li><a>Londres</a></li>
+    </ul>
+
+    <div class="contenedor">
+        <h2 id="titulo">Bienvendio a nuestra web</h2>
+        <h3 id="subtitulo">Elija su destino</h3>
+        <p id="parrafo">Tenemos los mejores paquetes que se acomoda a su estilo de vida</p>
+        <h1 id="precio"></h1>
     </div>
 
-    
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
+
 </html>

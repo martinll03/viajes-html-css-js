@@ -1,31 +1,43 @@
-let n_aleatorio = getNumberRandom();
-let elementmsj =  document.getElementById("mensaje");
-function chequearResultado(){
-    let number = parseInt(document.getElementById("numeroEntrada").value);
-    let messaje ='';
-    elementmsj.style.color="black";
-    if(number<0||number>100||isNaN(number)){
-        messaje ='valor no valido'+number;
-        elementmsj.style.color="red";
-    }else if(n_aleatorio===number){
-        messaje = 'Número a acertado, gansate el juego!!! '+n_aleatorio;
-        n_aleatorio = getNumberRandom();
-        document.getElementById("numeroEntrada").value='';
-        elementmsj.style.color="green";
-    }else if(n_aleatorio>number){
-        messaje = 'el número ingresado es menor!!! '+n_aleatorio;
-    }else if(n_aleatorio<number){
-        messaje = 'el número ingresado es mayor!!! '+n_aleatorio;
-    }
-    elementmsj.textContent = messaje;
-}
-function getNumberRandom(){
-    return Math.floor(Math.random() * 100) + 1;
-}
-function verificarEnter(event){
-    if(event.key==='Enter'){
-        chequearResultado();
-    }
 
-    }
-console.log(n_aleatorio);
+import {
+    barcelona,
+    roma,
+    paris,
+    londres
+} from './ciudades.js'
+
+let enlaces = document.querySelectorAll('a');
+let tituloElemento = document.getElementById('titulo');
+let subTituloElemento = document.getElementById('subtitulo');
+let parafoElemento = document.getElementById('parrafo');
+let precioElemento = document.getElementById('precio');
+
+enlaces.forEach(function(enlace){
+    enlace.addEventListener('click',function(){
+        //remover activo
+        enlaces.forEach(function(enlace){
+            enlace.classList.remove('active');
+        });
+        // agregar la clase "active" al enlace actual
+        this.classList.add('active');
+        // obtener el contenido correspondiente según el lenalce
+        let contenido = obtenerContenido(this.textContent);
+        tituloElemento.innerHTML = contenido.titulo;
+        subTituloElemento.innerHTML = contenido.subtitulo;
+        parafoElemento.innerHTML = contenido.parrafo;
+        precioElemento.innerHTML = `Valor de de la inversión: $${contenido.precio}.00`
+
+    });
+});
+
+//funcion para traer la información correcta desde ciudades.js
+function obtenerContenido(enlace){
+    let contenido = {
+        'Barcelona': barcelona
+        ,'Roma':roma
+        ,'París':paris
+        ,'Londres':londres
+    };
+    return contenido[enlace];
+}
+console.log(enlaces);
